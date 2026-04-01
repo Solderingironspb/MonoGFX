@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Oleg\AppData\Local\Temp\ccNvsPlJ.s 			page 1
+ARM GAS  C:\Users\SOLDER~1\AppData\Local\Temp\ccxs4vzI.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Oleg\AppData\Local\Temp\ccNvsPlJ.s 			page 1
   43              		.cfi_def_cfa 7, 8
   10:Core/Src/main.c ****     CMSIS_Debug_init();
   44              		.loc 1 10 5
-ARM GAS  C:\Users\Oleg\AppData\Local\Temp\ccNvsPlJ.s 			page 2
+ARM GAS  C:\Users\SOLDER~1\AppData\Local\Temp\ccxs4vzI.s 			page 2
 
 
   45 0006 FFF7FEFF 		bl	CMSIS_Debug_init
@@ -110,15 +110,15 @@ ARM GAS  C:\Users\Oleg\AppData\Local\Temp\ccNvsPlJ.s 			page 1
   81 004e 0849     		ldr	r1, .L3+4
   82 0050 0848     		ldr	r0, .L3+8
   83 0052 FFF7FEFF 		bl	sprintf
-  21:Core/Src/main.c ****     MonoGFX_Decode_UTF8(0, 0, FONT_5X7, INVERSION_OFF, MonoGFX_tx_buffer);
+  21:Core/Src/main.c ****     MonoGFX_Decode_UTF8(1, 1, FONT_5X7, INVERSION_OFF, MonoGFX_tx_buffer);
   84              		.loc 1 21 5
   85 0056 074B     		ldr	r3, .L3+8
   86 0058 0093     		str	r3, [sp]
   87 005a 0023     		movs	r3, #0
   88 005c 0122     		movs	r2, #1
-  89 005e 0021     		movs	r1, #0
-  90 0060 0020     		movs	r0, #0
-ARM GAS  C:\Users\Oleg\AppData\Local\Temp\ccNvsPlJ.s 			page 3
+  89 005e 0121     		movs	r1, #1
+  90 0060 0120     		movs	r0, #1
+ARM GAS  C:\Users\SOLDER~1\AppData\Local\Temp\ccxs4vzI.s 			page 3
 
 
   91 0062 FFF7FEFF 		bl	MonoGFX_Decode_UTF8
@@ -126,11 +126,9 @@ ARM GAS  C:\Users\Oleg\AppData\Local\Temp\ccNvsPlJ.s 			page 1
   92              		.loc 1 22 5
   93 0066 FFF7FEFF 		bl	MonoGFX_Update
   94              	.L2:
-  23:Core/Src/main.c ****     
-  24:Core/Src/main.c **** 
-  25:Core/Src/main.c ****     
-  26:Core/Src/main.c ****     while (1) {
-  95              		.loc 1 26 11 discriminator 1
+  23:Core/Src/main.c **** 
+  24:Core/Src/main.c ****     while (1) {
+  95              		.loc 1 24 11 discriminator 1
   96 006a FEE7     		b	.L2
   97              	.L4:
   98              		.align	2
@@ -146,15 +144,15 @@ ARM GAS  C:\Users\Oleg\AppData\Local\Temp\ccNvsPlJ.s 			page 1
  109              		.file 3 "c:\\dev_tools\\stm32_tools\\gnu-tools-for-stm32.12.3\\tools\\arm-none-eabi\\include\\sys\
  110              		.file 4 "Drivers/CMSIS/stm32f103xb.h"
  111              		.file 5 "Core/Inc/stm32f103xx_CMSIS.h"
-ARM GAS  C:\Users\Oleg\AppData\Local\Temp\ccNvsPlJ.s 			page 4
+ARM GAS  C:\Users\SOLDER~1\AppData\Local\Temp\ccxs4vzI.s 			page 4
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\Oleg\AppData\Local\Temp\ccNvsPlJ.s:18     .rodata:00000000 $d
-C:\Users\Oleg\AppData\Local\Temp\ccNvsPlJ.s:23     .text.main:00000000 $t
-C:\Users\Oleg\AppData\Local\Temp\ccNvsPlJ.s:29     .text.main:00000000 main
-C:\Users\Oleg\AppData\Local\Temp\ccNvsPlJ.s:100    .text.main:0000006c $d
+C:\Users\SOLDER~1\AppData\Local\Temp\ccxs4vzI.s:18     .rodata:00000000 $d
+C:\Users\SOLDER~1\AppData\Local\Temp\ccxs4vzI.s:23     .text.main:00000000 $t
+C:\Users\SOLDER~1\AppData\Local\Temp\ccxs4vzI.s:29     .text.main:00000000 main
+C:\Users\SOLDER~1\AppData\Local\Temp\ccxs4vzI.s:100    .text.main:0000006c $d
                            .group:00000000 wm4.0.57948b105342b2a9a91afe6dac72b4ef
                            .group:00000000 wm4.stm32f1xx.h.39.208bb8a61c892b7c37d899c49a031330
                            .group:00000000 wm4.stm32f103xb.h.38.ec967d5ad9d3269cb0788eebda048e38
@@ -206,7 +204,7 @@ C:\Users\Oleg\AppData\Local\Temp\ccNvsPlJ.s:100    .text.main:0000006c $d
 
 UNDEFINED SYMBOLS
 CMSIS_Debug_init
-ARM GAS  C:\Users\Oleg\AppData\Local\Temp\ccNvsPlJ.s 			page 5
+ARM GAS  C:\Users\SOLDER~1\AppData\Local\Temp\ccxs4vzI.s 			page 5
 
 
 CMSIS_RCC_SystemClock_72MHz

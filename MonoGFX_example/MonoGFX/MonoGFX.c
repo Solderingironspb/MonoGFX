@@ -1,7 +1,7 @@
 /*
  * MonoGFX_lib.c
  *
- *  Версия 1.0.(Общая графическая библиотека для монохромных графических дисплеев)
+ *  Версия 1.0a.(Общая графическая библиотека для монохромных графических дисплеев)
  *
  *  Поддерживаемые драйвера:
  *  - ST7565r
@@ -636,14 +636,14 @@ void MonoGFX_Init(void) {
     Delay_ms(1);
     // войти в режим динамического контраста
     MonoGFX_Send_command(ST7567A_SET_EV_CMD);  // Electronic Volume
-    MonoGFX_Send_command(32);                  // Настройка контраста. Отрегулируйте на своем дисплее. У меня на 15-19 норм. Максимум 63.
+    MonoGFX_Send_command(38);                  // Настройка контраста. Отрегулируйте на своем дисплее. У меня на 15-19 норм. Максимум 63.
     Delay_ms(1);
     MonoGFX_Send_command(ST7567A_SET_START_LINE);
     Delay_ms(1);
     // CMD_DISPLAY_ON  CMD_DISPLAY_OFF
     MonoGFX_Send_command(ST7567A_DISPLAY_ON);  // Display on
     // Инвертирование экрана
-    MonoGFX_Send_command(ST7567A_COLOR_NORMAL);  // 0xA6 - nomal, 0xA7 - revers
+    MonoGFX_Send_command(ST7567A_COLOR_INVERSE);  // 0xA6 - nomal, 0xA7 - revers
     Delay_ms(1);
     CS_OFF;
 }
