@@ -559,7 +559,7 @@ volatile uint32_t Timeout_counter_ms = 0;  // Переменная для тай
  */
 void Delay_ms(uint32_t Milliseconds) {
     Delay_counter_ms = Milliseconds;
-    while (Delay_counter_ms != 0);
+     while (Delay_counter_ms != 0);
 }
 
 /**
@@ -2590,9 +2590,9 @@ void CMSIS_SPI1_init(void) {
      * 110: fPCLK/128
      * 111: fPCLK/256
      * */
-    MODIFY_REG(SPI1->CR1, SPI_CR1_BR, 0b011 << SPI_CR1_BR_Pos);  // fPCLK/4. 72000000/32 = 2.22 MBits/s
-    CLEAR_BIT(SPI1->CR1, SPI_CR1_CPOL);                            // Полярность
-    CLEAR_BIT(SPI1->CR1, SPI_CR1_CPHA);                            // Фаза
+    MODIFY_REG(SPI1->CR1, SPI_CR1_BR, 0b110 << SPI_CR1_BR_Pos);  // fPCLK/4. 72000000/32 = 2.22 MBits/s
+    SET_BIT(SPI1->CR1, SPI_CR1_CPOL);                            // Полярность
+    SET_BIT(SPI1->CR1, SPI_CR1_CPHA);                            // Фаза
     CLEAR_BIT(SPI1->CR1, SPI_CR1_DFF);                           // 0: 8-bit data frame format is selected for transmission/reception
     CLEAR_BIT(SPI1->CR1, SPI_CR1_LSBFIRST);                      // 0: MSB transmitted first
     SET_BIT(SPI1->CR1, SPI_CR1_SSM);                             // 1: Software slave management enabled

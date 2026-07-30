@@ -27,7 +27,8 @@
 /******************************** ВЫБОР ДРАЙВЕРА ДИСПЛЕЯ **********************************/
 // ВАЖНО! Выбран должен быть только один драйвер! Остальное закккоментируем.
 //#define ST7565r  // GMG12864-06D
-#define ST7567   // GMG12864-03A
+//#define ST7567   // GMG12864-03A
+#define ST7920   // ST7920
 
 
 
@@ -51,7 +52,19 @@
 #define DC_PORT GPIOA  // Порт ножки Data-command
 #define DC_PIN  4      // Пин ножки Data-command
 
-// NSS_ACTIVE_LOW
+#if defined (ST7920)
+//CS_ACTIVE_HIGH
+#define CS_OFF  CS_PORT->BSRR = (1 << (CS_PIN + 16))  // CS выкл.
+#define CS_ON CS_PORT->BSRR = (1 << CS_PIN);        // CS вкл.
+
+// RST_ACTIVE_LOW
+#define RST_ON  RST_PORT->BSRR = (1 << (RST_PIN + 16))  // RST вкл.
+#define RST_OFF RST_PORT->BSRR = (1 << RST_PIN);        // RST выкл.
+
+#endif
+
+#if defined (ST7565r) || defined (ST7567)
+// CS_ACTIVE_LOW
 #define CS_ON  CS_PORT->BSRR = (1 << (CS_PIN + 16))  // CS вкл.
 #define CS_OFF CS_PORT->BSRR = (1 << CS_PIN);        // CS выкл.
 
@@ -59,9 +72,16 @@
 #define RST_ON  RST_PORT->BSRR = (1 << (RST_PIN + 16))  // RST вкл.
 #define RST_OFF RST_PORT->BSRR = (1 << RST_PIN);        // RST выкл.
 
+
 // DC_ACTIVE_LOW
 #define DC_ON  DC_PORT->BSRR = (1 << (DC_PIN + 16))  // DC вкл.
 #define DC_OFF DC_PORT->BSRR = (1 << DC_PIN);        // DC выкл.
+
+#endif
+
+
+
+
 
 /******************************** ДРАЙВЕР ST7565r **********************************/
 #if defined(ST7565r)
@@ -158,6 +178,10 @@ void MonoGFX_Draw_circle(uint8_t x, uint8_t y, uint8_t radius, uint8_t color);
 void MonoGFX_Draw_circle_filled(int16_t x, int16_t y, int16_t radius, uint8_t color);
 void MonoGFX_Draw_triangle(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t x3, uint16_t y3, uint8_t color);
 void MonoGFX_Draw_triangle_filled(uint16_t x1, uint16_t y1, uint16_t x2, uint16_t y2, uint16_t x3, uint16_t y3, uint8_t color);
+
+#if defined(ST7920)
+void MonoGFX_gotoXY(uint8_t x, uint8_t y);
+#endif
 
 /******************************** ШРИФТЫ **********************************/
 
